@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distribuição de Livros Online</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilo para o container do tooltip */
+        .tooltip {
+            display: none;
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1000;
+            max-width: 300px; /* Aumenta a largura máxima do tooltip */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.3s;
+            opacity: 0;
+            pointer-events: none; /* Para evitar que o mouse interfira na exibição do tooltip */
+        }
+
+        /* Mostra o tooltip quando o item do livro é hover */
+        .book-item:hover .tooltip {
+            display: block;
+            opacity: 1;
+            left: 110%; /* Ajusta a posição do tooltip para a direita */
+            top: 50%; /* Centraliza verticalmente em relação ao item do livro */
+            transform: translateY(-50%); /* Ajusta o tooltip para estar centralizado em relação ao item do livro */
+        }
+
+        /* Efeito de desfoque no fundo ao passar o mouse sobre o livro */
+        .book-item:hover ~ .book-grid {
+            filter: blur(3px);
+        }
+
+        /* Adicionando um container para cada livro */
+        .book-item {
+            position: relative; /* Para que o tooltip seja posicionado em relação ao item do livro */
+            margin: 15px; /* Adiciona margem para espaço entre os livros */
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Livros Online</h1>
+        <nav>
+            <a href="#home">Início</a>
+            <a href="#livros">Livros</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero-section">
+        <h2>Bem-vindo ao Distribuição de Livros Online</h2>
+        <p>Descubra novos livros e autores incríveis.</p>
+        <button>Explorar Livros</button>
+    </section>
+
+    <section id="livros" class="books-section">
+        <h2>Livros em Destaque</h2>
+        <div class="book-grid">
+            <div class="book-item">
+                <img src="images/livro1.jpg" alt="O Segredo das Estrelas">
+                <h3>O Segredo das Estrelas</h3>
+                <p>Autor: João Silva</p>
+                <div class="tooltip">
+                    <img src="images/livro1.jpg" alt="O Segredo das Estrelas" style="width: 100%; border-radius: 5px;">
+                    <strong>O Segredo das Estrelas</strong><br>
+                    <em>Autor: João Silva</em><br>
+                    <p>Uma aventura intergaláctica onde uma jovem astrônoma desvenda um antigo segredo escondido nas estrelas. Em meio a constelações e galáxias, sua jornada a leva a questionar os mistérios do universo e sua própria existência.</p>
+                </div>
+            </div>
+            <div class="book-item">
+                <img src="images/livro2.jpg" alt="Além do Horizonte">
+                <h3>Além do Horizonte</h3>
+                <p>Autor: Maria Souza</p>
+                <div class="tooltip">
+                    <img src="images/livro2.jpg" alt="Além do Horizonte" style="width: 100%; border-radius: 5px;">
+                    <strong>Além do Horizonte</strong><br>
+                    <em>Autor: Maria Souza</em><br>
+                    <p>Em um mundo pós-apocalíptico, uma mulher solitária embarca em uma jornada para além do que restou da civilização, buscando um novo começo. Sua trajetória revela o poder da resiliência humana e os segredos de uma natureza quase esquecida.</p>
+                </div>
+            </div>
+            <div class="book-item">
+                <img src="images/livro3.jpg" alt="Caminhos de Outono">
+                <h3>Caminhos de Outono</h3>
+                <p>Autor: Carlos Mendes</p>
+                <div class="tooltip">
+                    <img src="images/livro3.jpg" alt="Caminhos de Outono" style="width: 100%; border-radius: 5px;">
+                    <strong>Caminhos de Outono</strong><br>
+                    <em>Autor: Carlos Mendes</em><br>
+                    <p>Em uma pequena vila cercada por árvores douradas, um homem retorna para confrontar seu passado. Em meio às folhas que caem, ele redescobre amizades, paixões e uma antiga promessa.</p>
+                </div>
+            </div>
+            <div class="book-item">
+                <img src="images/livro4.jpg" alt="Vozes do Vento">
+                <h3>Vozes do Vento</h3>
+                <p>Autor: Ana Oliveira</p>
+                <div class="tooltip">
+                    <img src="images/livro4.jpg" alt="Vozes do Vento" style="width: 100%; border-radius: 5px;">
+                    <strong>Vozes do Vento</strong><br>
+                    <em>Autor: Ana Oliveira</em><br>
+                    <p>Uma menina sensível aos sussurros do vento desvenda histórias antigas de seu vilarejo isolado. Enquanto mergulha nas lendas locais, ela descobre mais sobre sua própria origem e os poderes da natureza que a rodeia.</p>
+                </div>
+            </div>
+            <div class="book-item">
+                <img src="images/livro5.jpg" alt="A Jornada de Aurora">
+                <h3>A Jornada de Aurora</h3>
+                <p>Autor: Lucas Almeida</p>
+                <div class="tooltip">
+                    <img src="images/livro5.jpg" alt="A Jornada de Aurora" style="width: 100%; border-radius: 5px;">
+                    <strong>A Jornada de Aurora</strong><br>
+                    <em>Autor: Lucas Almeida</em><br>
+                    <p>Uma jovem guerreira parte em uma missão para salvar seu reino, enfrentando criaturas míticas e desafios sombrios. Aurora descobre forças que jamais imaginou ter e aprende o real significado de coragem.</p>
+                </div>
+            </div>
+            <div class="book-item">
+                <img src="images/livro6.jpg" alt="Reflexos da Lua">
+                <h3>Reflexos da Lua</h3>
+                <p>Autor: Fernanda Costa</p>
+                <div class="tooltip">
+                    <img src="images/livro6.jpg" alt="Reflexos da Lua" style="width: 100%; border-radius: 5px;">
+                    <strong>Reflexos da Lua</strong><br>
+                    <em>Autor: Fernanda Costa</em><br>
+                    <p>Em uma cidade à beira-mar, uma mulher encontra consolo nas noites de lua cheia, quando os segredos do passado voltam a assombrá-la. Entre marés e reflexos, ela desvenda histórias de amor e perda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="about-section">
+        <h2>Sobre Nós</h2>
+        <p>Somos uma plataforma dedicada a distribuir livros de maneira acessível para todos.</p>
+    </section>
+
+    <section id="contato" class="contact-section">
+        <h2>Contato</h2>
+        <form>
+            <label for="name">Nome:</label>
+            <input type="text" id="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="message">Mensagem:</label>
+            <textarea id="message" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Livros Online. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
